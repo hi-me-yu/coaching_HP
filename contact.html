@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="コーチングについてのお問い合わせはこちらからお送りください。">
+    <title>お問い合わせ｜Sample</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-form {
+            display: grid;
+            gap: 24px;
+        }
+
+        .form-field {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-field label,
+        .form-field legend {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .required {
+            margin-left: 8px;
+            color: #a3493f;
+            font-size: 11px;
+        }
+
+        .optional {
+            margin-left: 8px;
+            color: var(--color-muted);
+            font-size: 11px;
+        }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100%;
+            padding: 13px 14px;
+            color: var(--color-text);
+            background: #fff;
+            border: 1px solid var(--color-line);
+            border-radius: 3px;
+            font: inherit;
+            font-size: 14px;
+        }
+
+        .form-field textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        .privacy-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .privacy-consent input {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
+            margin-top: 4px;
+            accent-color: var(--color-accent-dark);
+        }
+
+        .privacy-consent a {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .form-submit {
+            justify-self: start;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            .form-submit {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="site-logo" href="index.html" aria-label="Sample ホーム">／Sample</a>
+
+        <nav class="site-nav" aria-label="メインナビゲーション">
+            <a href="index.html">ホーム</a>
+            <a href="coaching.html">コーチング</a>
+            <a href="profile.html">プロフィール</a>
+            <a class="nav-contact is-current" href="contact.html" aria-current="page">お問い合わせ</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="section__eyebrow">CONTACT</p>
+            <h1>お問い合わせ</h1>
+            <p>コーチングについてのご相談やご質問をお送りください。</p>
+        </section>
+
+        <section class="section">
+            <div class="section__inner narrow">
+                <p class="section__lead">
+                    内容を確認のうえ、運営者よりご連絡いたします。必須項目をご入力ください。
+                </p>
+
+                <!--
+                    このフォームは見た目のみです。
+                    送信を受け付けるには、フォームサービスやサーバー側の送信処理との接続が必要です。
+                -->
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-field">
+                        <label for="name">お名前<span class="required">必須</span></label>
+                        <input id="name" name="name" type="text" autocomplete="name" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="email">メールアドレス<span class="required">必須</span></label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="phone">電話番号<span class="optional">任意</span></label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="inquiry-type">お問い合わせの種類<span class="required">必須</span></label>
+                        <select id="inquiry-type" name="inquiry_type" required>
+                            <option value="">選択してください</option>
+                            <option value="trial">無料体験・セッションについて</option>
+                            <option value="service">サービス内容・料金について</option>
+                            <option value="business">法人・チーム向けのご相談</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">お問い合わせ内容<span class="required">必須</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <label class="privacy-consent">
+                        <input type="checkbox" name="privacy_agreement" required>
+                        <span>
+                            <a href="privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+                            を確認し、個人情報の取り扱いに同意します。<span class="required">必須</span>
+                        </span>
+                    </label>
+
+                    <button class="button button--primary form-submit" type="submit">入力内容を送信する</button>
+                </form>
+
+                <p class="note">※現在のフォームは送信処理未接続です。公開前にフォームサービスまたはサーバー側の送信設定が必要です。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="site-logo" href="index.html">／Sample</a>
+        <p>&copy; Sample</p>
+    </footer>
+</body>
+
+</html>
