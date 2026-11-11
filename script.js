@@ -5,9 +5,9 @@ form_data.addEventListener("submit", function(event){
 
     event.preventDefault(); /* 送信ボタンでページ遷移を止める */
 
-    const formData = new FormData(form_data);
+    const formData = new FormData(form_data); /* フォームデータを取得する */
 
-    const data = new URLSearchParams(formData);
+    const data = new URLSearchParams(formData); /* fetchでフォームデータを送れる形にする */
 
     fetch("https://script.google.com/macros/s/AKfycbwo5MdKGblwa101LxcPlZVxtDv9pr09NjZUXVBcMBZJtOIEAHtK-V6bn1qJWfxQP3tkqA/exec", {
         method: "POST",
